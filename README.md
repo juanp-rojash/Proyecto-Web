@@ -17,4 +17,4 @@ Juan Pablo Rojas Higuita -
 
 ## Wireframes
 
-En esta sección [click aqui](https://github.com/juanp-rojash/Proyecto-Web/tree/master/wireframes) se encuentran los wireframes de las secciones del proyecto web
+En esta sección ( [click aqui](https://github.com/juanp-rojash/Proyecto-Web/tree/master/wireframes) ) se encuentran los wireframes de las secciones del proyecto web
