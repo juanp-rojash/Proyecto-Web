@@ -5,7 +5,7 @@
 ## Autor
 
 Juan Pablo Rojas Higuita
-[ website ](https://www.linkedin.com/in/juan-pablo-rojas-higuita-8127661a5/)
+[ perfil ](https://www.linkedin.com/in/juan-pablo-rojas-higuita-8127661a5/)
 
 ## Secciones
 
