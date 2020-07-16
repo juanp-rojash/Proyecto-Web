@@ -4,7 +4,7 @@
 
 ## Autor
 
-Juan Pablo Rojas Higuita
+Juan Pablo Rojas Higuita -
 [ perfil ](https://www.linkedin.com/in/juan-pablo-rojas-higuita-8127661a5/)
 
 ## Secciones
