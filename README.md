@@ -1,6 +1,6 @@
 # Micrositio
 
-
+En este repositorio encontraras los diseños, códigos e información sobre la pagina web para negocios de cualquier tipo de comercio. 
 
 ## Autor
 
