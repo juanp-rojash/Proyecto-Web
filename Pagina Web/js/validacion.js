@@ -30,7 +30,4 @@ function validar(formulario){
         return false;
     }
 
-    var voz = "hola";
-    var code = md5(voz);
-    alert(code);
 }
