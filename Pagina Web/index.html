@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+</head>
+<body>
+    <link rel="stylesheet" href="css/estilo_registro.css"/>
+    <script src="js/validacion.js"></script>
+    <script src="js/registro.js"></script>
+    <form name="formulario" action="" onsubmit="validar(this)">
+        <p>REGISTRO</p>
+        <div class="contenedor">
+            <div class="caja">
+                <p>PRIMER NOMBRE
+                    <input type="text" name="nombre" id="nombre" required>
+                </p>
+                <p>PRIMER APELLIDO
+                    <input type="text" name="apellido" id="apellido" required>
+                </p>
+                <p>EMAIL
+                    <input type="email" name="correo" id="correo" required>
+                </p>
+                <p>CONTRASEÑA
+                    <input type="password" name="contrasena" id="contrasena" required>
+                </p>
+            </div>
+        </div>
+        <div class="contenedor">
+            <div>
+                <p>DEPARTAMENTO</p>
+                <select class="seleccion" name="departamento" onchange="eleccion()" required>
+                    <option></option>
+                    <option value="1">Amazonas</option>
+                    <option value="2">Antioquia</option>
+                    <option value="3">Arauca</option>
+                    <option value="4">Atlantico</option>
+                    <option value="5">Bolivar</option>
+                    <option value="6">Boyaca</option>
+                    <option value="7">Caldas</option>  
+                    <option value="8">Caqueta</option>
+                    <option value="9">Nariño</option>
+                    <option value="10">Cauca</option>
+                    <option value="11">Cesar</option>
+                    <option value="12">Choco</option>
+                    <option value="13">Cordoba</option>
+                    <option value="14">Cundinamarca</option>
+                    <option value="15">Risaralda</option>
+                    <option value="16">Santander</option>
+                    <option value="17">Huila</option>
+                    <option value="18">Tolima</option>
+                    <option value="19">Magdalena</option>
+                    <option value="20">Meta</option>
+                    <option value="21">Sucre</option>
+                    <option value="22">Valle del cauca</option>
+                </select>
+            </div>
+            <div>
+                <p>CIUDAD</p>
+                <select class="seleccion" name="ciudad" required>
+                    <option></option>
+                </select>
+                
+            </div>
+        </div>
+        <div class="contenedor">
+            <p>DIRECCION
+                <input type="text" name="direccion" id="direccion" required>
+            </p>
+        </div>
+        <input type="submit" value="REGISTRARSE">
+    </form>
+</body>
+</html>
