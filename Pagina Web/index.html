@@ -2,74 +2,93 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Contenido</title>
 </head>
 <body>
-    <link rel="stylesheet" href="css/estilo_registro.css"/>
-    <script src="js/validacion.js"></script>
-    <script src="js/registro.js"></script>
-    <form name="formulario" action="" onsubmit="validar(this)">
-        <p>REGISTRO</p>
-        <div class="contenedor">
-            <div class="caja">
-                <p>PRIMER NOMBRE
-                    <input type="text" name="nombre" id="nombre" required>
-                </p>
-                <p>PRIMER APELLIDO
-                    <input type="text" name="apellido" id="apellido" required>
-                </p>
-                <p>EMAIL
-                    <input type="email" name="correo" id="correo" required>
-                </p>
-                <p>CONTRASEÑA
-                    <input type="password" name="contrasena" id="contrasena" required>
-                </p>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+
+    <div class="d-flex justify-content-center">
+        <h1>Contenido</h1>
+    </div>
+    <br>
+    <a href="galeria.html" style="text-decoration:none">
+        <div class="d-flex justify-content-center">
+            <h1>Galeria</h1>
+        </div>
+        <div class="container p-3 my-3 bg-dark text-white">
+            <div class="row">
+                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                      <div class="carousel-item active" >
+                        <img class="d-block w-100" src="img/paisaje3.jpg" alt="First slide">
+                      </div>
+                      <div class="carousel-item" >
+                        <img class="d-block w-100" src="img/paisaje1.jpg" alt="Second slide">
+            
+                      </div>
+                      <div class="carousel-item" >
+                        <img class="d-block w-100" src="img/paisaje2.jpg" alt="Third slide">
+                      </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="sr-only">Next</span>
+                    </a>
+                </div>
             </div>
         </div>
-        <div class="contenedor">
-            <div>
-                <p>DEPARTAMENTO</p>
-                <select class="seleccion" name="departamento" onchange="eleccion()" required>
-                    <option></option>
-                    <option value="1">Amazonas</option>
-                    <option value="2">Antioquia</option>
-                    <option value="3">Arauca</option>
-                    <option value="4">Atlantico</option>
-                    <option value="5">Bolivar</option>
-                    <option value="6">Boyaca</option>
-                    <option value="7">Caldas</option>  
-                    <option value="8">Caqueta</option>
-                    <option value="9">Nariño</option>
-                    <option value="10">Cauca</option>
-                    <option value="11">Cesar</option>
-                    <option value="12">Choco</option>
-                    <option value="13">Cordoba</option>
-                    <option value="14">Cundinamarca</option>
-                    <option value="15">Risaralda</option>
-                    <option value="16">Santander</option>
-                    <option value="17">Huila</option>
-                    <option value="18">Tolima</option>
-                    <option value="19">Magdalena</option>
-                    <option value="20">Meta</option>
-                    <option value="21">Sucre</option>
-                    <option value="22">Valle del cauca</option>
-                </select>
-            </div>
-            <div>
-                <p>CIUDAD</p>
-                <select class="seleccion" name="ciudad" required>
-                    <option></option>
-                </select>
-                
+    </a>
+    <br>
+    <a href="contacto.html" style="text-decoration:none">
+        <div class="container p-3 my-3 bg-dark text-white">
+            <div class="row">
+                <div>
+                    <h1 href="contacto.html">Contacto</h1>
+                </div>
             </div>
         </div>
-        <div class="contenedor">
-            <p>DIRECCION
-                <input type="text" name="direccion" id="direccion" required>
-            </p>
+    </a>
+    <br>
+    <div class="d-flex justify-content-center">
+        <h1>Quienes somos</h1>
+    </div>
+    <div class="container p-3 my-3 bg-dark text-white">
+        <div class="row">
+            <h3><small >Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                 Fugit dolores adipisci dicta quisquam officia animi sint, 
+                 mollitia culpa! Maiores nulla ipsam labore atque quas iusto 
+                 repudiandae vitae vero tempore dolore?
+            </small></h3>
         </div>
-        <input type="submit" value="REGISTRARSE">
-    </form>
+    </div>
+    
+    <div class="container p-3 my-3 bg-dark text-white">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="text-center">
+                    <a href="registro.html" style="text-decoration:none">
+                        <button type="button" class="btn btn-dark">Registrate</button>
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="text-center">
+                    <a href="login.html" style="text-decoration:none">
+                        <button type="button" class="btn btn-dark">Inicia Sesion</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+
 </body>
 </html>

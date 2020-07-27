@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Registro</title>
+</head>
+<body>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+
+    <div class="d-flex justify-content-center">
+        <h1>Registrate</h1>
+    </div>
+    
+    <form name="formulario" id="formulario"  onsubmit="" method="post" novalidate>
+        <div class="container p-3 my-3 bg-dark text-white">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <input class="form-control input-sm" type="text" name="nombre" id="nombre" 
+                            placeholder="Ingrese su nombre" minlength="2" pattern="/[a-z]+$/i" 
+                            required data-pristine-required-message="Campo obligatorio" required/><br>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <input class="form-control input-sm" type="text" name="apellido" id="apellido" 
+                            placeholder="Ingrese su apellido" minlength="2" pattern="/[a-z]+$/i" 
+                            required data-pristine-required-message="Campo obligatorio"required/><br>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <input class="form-control input-sm" type="email" name="correo" id="correo" 
+                            placeholder="Ingrese su correo electronico" 
+                            required data-pristine-required-message="Campo obligatorio" required/><br>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <input class="form-control input-sm" type="password" name="contrasena" id="contrasena" 
+                            placeholder="Ingrese su contraseña" 
+                            required data-pristine-required-message="Campo obligatorio" required/><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container p-3 my-3 bg-dark text-white">
+            <div class="row">
+                <div class="col-sm-6">
+                    <select class="custom-select" data-width="100px" name="departamento" id="departamento" onchange="eleccion()" required>
+                        <option></option>
+                        <option value="1">Amazonas</option>
+                        <option value="2">Antioquia</option>                      
+                        <option value="3">Arauca</option>
+                        <option value="4">Atlantico</option>
+                        <option value="5">Bolivar</option>
+                        <option value="6">Boyaca</option>
+                        <option value="7">Caldas</option>  
+                        <option value="8">Caqueta</option>
+                        <option value="9">Nariño</option>
+                        <option value="10">Cauca</option>
+                        <option value="11">Cesar</option>
+                        <option value="12">Choco</option>
+                        <option value="13">Cordoba</option>
+                        <option value="14">Cundinamarca</option>
+                        <option value="15">Risaralda</option>
+                        <option value="16">Santander</option>
+                        <option value="17">Huila</option>
+                        <option value="18">Tolima</option>
+                        <option value="19">Magdalena</option>
+                        <option value="20">Meta</option>
+                        <option value="21">Sucre</option>
+                        <option value="22">Valle del cauca</option>
+                    </select><br>
+                </div>
+                <div class="col-sm-6">
+                    <select class="custom-select" name="ciudad" id="ciudad" required>
+                        <option value=""></option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="container p-3 my-3 bg-dark text-white">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <input class="form-control input-sm" type="text" name="direccion" id="direccion" 
+                            placeholder="Ingrese su direccion" minlength="8" 
+                            required data-pristine-required-message="Campo obligatorio" required><br>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="d-flex justify-content-center">
+                        <input type="submit" value="REGISTRARSE" id="boton">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </form>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/validacion.js"></script>
+    <script src="js/seleccion.js"></script>
+    <script src="js/vendor/pristine.min.js"></script>
+
+</body>
+</html>
