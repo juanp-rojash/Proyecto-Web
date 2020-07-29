@@ -6,14 +6,31 @@
     <title>Login</title>
 </head>
 <body> 
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-
+    <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
+    <nav class="navbar sticky-top navbar-light bg-light">
+        <p>
+            <a href="" style="text-decoration:none">
+                <button class="btn btn-outline-success" type="button">Inicia Sesion</button>
+            </a>
+            <a href="galeria.html" style="text-decoration:none">
+                <button class="btn btn-sm btn-outline-secondary" type="button">Galeria</button>
+            </a>
+            <a href="contacto.html" style="text-decoration:none">
+                <button class="btn btn-sm btn-outline-secondary" type="button">Contacto</button>
+            </a>
+            <a href="registro.html" style="text-decoration:none">
+                <button class="btn btn-sm btn-outline-secondary" type="button">Registrate</button>
+            </a>
+            <a href="index.html" style="text-decoration:none">
+                <button class="btn btn-sm btn-outline-secondary" type="button">Inicio</button>
+            </a>
+        </p>
+    </nav>
     <div class="d-flex justify-content-center">
         <h1>Iniciar Sesion</h1>
     </div>
-
     <form name="formulario" id="formulario"  onsubmit="" method="post" novalidate>
-        <div class="container p-3 my-3 bg-dark text-white">
+        <div class="container">
             <div class="row">
                 <div class="col-sm-12">
                     <div class="form-group">
@@ -35,18 +52,14 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="d-flex justify-content-center">
-                        <input type="submit" value="REGISTRARSE" id="boton">
+                        <input class="btn btn-outline-dark" type="submit" value="Inicia Sesion" id="boton">
                     </div>
                 </div>
             </div>
         </div>
     </form>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/vendor/bootstrap.min.js"></script>
     <script src="js/validacion.js"></script>
     <script src="js/vendor/pristine.min.js"></script>
-
 </body>
 </html>
