@@ -29,13 +29,13 @@
     <div class="d-flex justify-content-center">
         <h1>Registrate</h1>
     </div>
-    <form name="formulario" id="formulario"  onsubmit="" method="post" novalidate>
+    <form name="formulario" id="formulario" class="container" onsubmit="" method="post" novalidate>
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
                     <div class="form-group">
                         <input class="form-control input-sm" type="text" name="nombre" id="nombre" 
-                            placeholder="Ingrese su nombre" minlength="2" pattern="/[a-z]+$/i" 
+                            placeholder="Ingrese su nombre" minlength="2" <!--pattern="/[a-z]+$/i"
                             required data-pristine-required-message="Campo obligatorio" required/><br>
                     </div>
                 </div>
@@ -44,7 +44,7 @@
                 <div class="col-sm-12">
                     <div class="form-group">
                         <input class="form-control input-sm" type="text" name="apellido" id="apellido" 
-                            placeholder="Ingrese su apellido" minlength="2" pattern="/[a-z]+$/i" 
+                            placeholder="Ingrese su apellido" minlength="2" <!--pattern="/[a-z]+$/i" 
                             required data-pristine-required-message="Campo obligatorio"required/><br>
                     </div>
                 </div>
@@ -107,8 +107,8 @@
     </form>
     <br>
     <script src="js/vendor/bootstrap.min.js"></script>
-    <script src="js/validacion.js"></script>
     <script src="js/departamentos.js"></script>
+    <script src="js/validacion.js"></script>
     <script src="js/vendor/pristine.min.js"></script>
 </body>
 </html>
