@@ -1,7 +1,8 @@
 
 let pst, frm
 
-window.onload = function () {
+
+window.onload = validacion;/*function () {
     frm = document.getElementById("formulario");
     pst = new Pristine(frm);
     cargarDepartamentos();
@@ -12,4 +13,17 @@ window.onload = function () {
         frm.classList.add("was-validated");
         cargarDepartamentos();
     });
-};
+};*/
+
+function validacion(){
+    frm = document.getElementById("formulario");
+    pst = new Pristine(frm);
+    cargarDepartamentos();
+
+    frm.addEventListener('submit', function(e){
+        e.preventDefault();
+        var valid = pst.validate();
+        frm.classList.add("was-validated");
+        cargarDepartamentos();
+    });
+}
