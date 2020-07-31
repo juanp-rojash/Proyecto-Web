@@ -1,3 +1,65 @@
+
+let pst, frm
+let dato;
+let nombre, apellido, contrasena, correo, direccion;
+
+window.onload = () => {
+    validacion();
+    init();
+    cargarDepartamentos();
+}
+///////////////////////////////////////////////////////////////////////////////
+function validacion(){
+    frm = document.getElementById("formulario");
+    pst = new Pristine(frm);
+
+    frm.addEventListener('submit', function(e){
+        e.preventDefault();
+        var valid = pst.validate();
+        frm.classList.add("was-validated");
+    });
+}
+///////////////////////////////////////////////////////////////////////////////
+function init(){
+    nombre = document.getElementById("nombre");
+    apellido = document.getElementById("apellido");
+    contrasena = document.getElementById("contrasena");
+    correo = document.getElementById("correo");
+    direccion = document.getElementById("direccion");
+    asignarEventos();
+    cargarDato();
+}
+function cargarDato(){
+    dato = JSON.parse(localStorage.getItem("dato"));
+    if(dato){
+        
+    }
+    else{
+        dato = [];
+    }
+}
+function guardarDato(){
+    var usuario = {};
+    if(nombre.value == "" || contrasena.value == "" || apellido.value == ""
+        || correo.value == "" || direccion.value == ""){
+
+    }
+    else{
+        usuario.nombre = nombre.value;
+        usuario.apellido = apellido.value;
+        usuario.contrasena = contrasena.value;
+        usuario.correo = correo.value;
+        usuario.direccion = direccion.value;
+        dato.push(usuario);
+        localStorage.setItem("dato", JSON.stringify(dato));
+        alert("Datos enviados correctamente");
+    }
+}
+function asignarEventos(){
+    var btn = document.getElementById("boton");
+    btn.addEventListener("click", guardarDato);
+}
+/////////////////////////////////////////////////////////////////
 var array = [ "Amazonas", "Antioquia", "Boyaca", "Choco", "Cundinamarca", "Meta", "Santander", "Arauca", "Atlantico", "Bogota", "Bolivar", "Caldas", "Caqueta", "Casanare", "Cauca", "Cesar", "Cordoba", "Guainia", "Guaviare", "Huila", "Guajira", "Magdalena", "Narino", "NorteSantander", "Putumayo", "Quindio", "Risaralda", "SanAndresProvidencia", "Sucre", "Tolima", "ValleCauca", "Vaupes", "Vichada"];
 var listaCiudades = {
   meta: ["Acac\u00edas", "Barranca de Up\u00eda", "Cabuyaro", "Castilla la Nueva", "Cubarral", "Cumaral", "El Calvario", "El Castillo", "El Dorado", "Fuente de Oro", "Granada", "Guamal", "La Macarena", "La Uribe", "Lejan\u00edas", "Mapirip\u00e1n", "Mesetas", "Puerto Concordia", "Puerto Gait\u00e1n", "Puerto Lleras", "Puerto L\u00f3pez", "Puerto Rico", "Restrepo", "San Carlos de Guaroa", "San Juan de Arama", "San Juanito", "San Mart\u00edn", "Villavicencio", "Vista Hermosa"],
@@ -34,45 +96,42 @@ var listaCiudades = {
   vichada: ["Cumaribo","La Primavera","Puerto Carre\u00f1o","Santa Rosal\u00eda"]
 }
 function cargarDepartamentos() {
-  addOptions("departamento", array);
-  cargarCiudades();
-}
-//Función para agregar opciones a un <select>.
-function addOptions(domElement, array) {
-  var selector = document.getElementsByName(domElement)[0];
-  for (departamento in array) {
-      var opcion = document.createElement("option");
-      opcion.text = array[departamento];
-      // Añadimos un value a los option para hacer mas facil escoger las ciudades
-      opcion.value = array[departamento].toLowerCase();
-      selector.add(opcion);
+    addOptions("departamento", array);
+    cargarCiudades();
   }
-}
-function cargarCiudades() {
-    // Objeto de departamentos con ciudades
-    var departamentos = document.getElementById('departamento');
-    var ciudades = document.getElementById('ciudad');
-    var departamentoSeleccionado = departamentos.value;
-    
-    // Se limpian las ciudades
-    ciudades.innerHTML = '<option value="">Seleccione una ciudad</option>';
-    
-    if(departamentoSeleccionado !== '')
-    {
-      // Se seleccionan y ordenan las ciudades
-      departamentoSeleccionado = listaCiudades[departamentoSeleccionado];
-      //departamentoSeleccionado.sort(); EVITAR
-    
-      // Se insertan las ciudades
-      departamentoSeleccionado.forEach(function(ciudad){
-        let opcion = document.createElement('option');
-        opcion.value = ciudad;
-        opcion.text = ciudad;
-        ciudades.add(opcion);
-      });
+  //Función para agregar opciones a un <select>.
+  function addOptions(domElement, array) {
+    var selector = document.getElementsByName(domElement)[0];
+    for (departamento in array) {
+        var opcion = document.createElement("option");
+        opcion.text = array[departamento];
+        // Añadimos un value a los option para hacer mas facil escoger las ciudades
+        opcion.value = array[departamento].toLowerCase();
+        selector.add(opcion);
     }
-    
   }
-window.onload = cargarDepartamentos;
- // Se cargan los departamentos para comprobar que funciona
-//cargarDepartamentos();
+  function cargarCiudades() {
+      // Objeto de departamentos con ciudades
+      var departamentos = document.getElementById('departamento');
+      var ciudades = document.getElementById('ciudad');
+      var departamentoSeleccionado = departamentos.value;
+      
+      // Se limpian las ciudades
+      ciudades.innerHTML = '<option value="">Seleccione una ciudad</option>';
+      
+      if(departamentoSeleccionado !== '')
+      {
+        // Se seleccionan y ordenan las ciudades
+        departamentoSeleccionado = listaCiudades[departamentoSeleccionado];
+        //departamentoSeleccionado.sort(); EVITAR
+      
+        // Se insertan las ciudades
+        departamentoSeleccionado.forEach(function(ciudad){
+          let opcion = document.createElement('option');
+          opcion.value = ciudad;
+          opcion.text = ciudad;
+          ciudades.add(opcion);
+        });
+    } 
+}
+/////////////////////////////////////////////////////////////////
