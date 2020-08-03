@@ -5,7 +5,7 @@ let nombre, apellido, contrasena, correo, direccion;
 
 window.onload = () => {
     validacion();
-    init();
+    //init();
     cargarDepartamentos();
 }
 ///////////////////////////////////////////////////////////////////////////////
@@ -15,49 +15,30 @@ function validacion(){
 
     frm.addEventListener('submit', function(e){
         e.preventDefault();
-        var valid = pst.validate();
-        frm.classList.add("was-validated");
+        if(pst.validate()){
+            procesarDatos();
+        }
+        else{
+            frm.classList.add("was-validated");
+        }
     });
 }
 ///////////////////////////////////////////////////////////////////////////////
-function init(){
-    nombre = document.getElementById("nombre");
-    apellido = document.getElementById("apellido");
-    contrasena = document.getElementById("contrasena");
-    correo = document.getElementById("correo");
-    direccion = document.getElementById("direccion");
-    asignarEventos();
-    cargarDato();
-}
-function cargarDato(){
-    dato = JSON.parse(localStorage.getItem("dato"));
-    if(dato){
-        
-    }
-    else{
-        dato = [];
-    }
-}
-function guardarDato(){
-    var usuario = {};
-    if(nombre.value == "" || contrasena.value == "" || apellido.value == ""
-        || correo.value == "" || direccion.value == ""){
+function procesarDatos(){
+    fetch('js/contrasena.php', {
+        method: 'post',
+        body: new FormData(frm)
+    }).then(function(response) {
+        return response.json();
+    }).then(function(json) {
+        guardarLocal(json);
+    }).catch(function(err) {
 
-    }
-    else{
-        usuario.nombre = nombre.value;
-        usuario.apellido = apellido.value;
-        usuario.contrasena = contrasena.value;
-        usuario.correo = correo.value;
-        usuario.direccion = direccion.value;
-        dato.push(usuario);
-        localStorage.setItem("dato", JSON.stringify(dato));
-        alert("Datos enviados correctamente");
-    }
+    });
 }
-function asignarEventos(){
-    var btn = document.getElementById("boton");
-    btn.addEventListener("click", guardarDato);
+function guardarLocal(json){
+    localStorage.setItem("usuario", JSON.stringify(json));
+    location.href = "login.html";
 }
 /////////////////////////////////////////////////////////////////
 var array = [ "Amazonas", "Antioquia", "Boyaca", "Choco", "Cundinamarca", "Meta", "Santander", "Arauca", "Atlantico", "Bogota", "Bolivar", "Caldas", "Caqueta", "Casanare", "Cauca", "Cesar", "Cordoba", "Guainia", "Guaviare", "Huila", "Guajira", "Magdalena", "Narino", "NorteSantander", "Putumayo", "Quindio", "Risaralda", "SanAndresProvidencia", "Sucre", "Tolima", "ValleCauca", "Vaupes", "Vichada"];
